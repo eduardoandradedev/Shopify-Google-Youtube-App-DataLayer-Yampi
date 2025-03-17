@@ -1,0 +1,17 @@
+function() {
+  var dataLayer = {{cjs - items - purchase}}; // Substitua pela variável que abre a matriz items
+
+  var totalQuantity = 0;
+
+  for (var key in dataLayer) {
+    if (dataLayer.hasOwnProperty(key)) {
+      var item = dataLayer[key];
+      var quantity = item.quantity ? parseInt(item.quantity) : 0; // Verifique o formato do parâmetro quantity
+      var itemId = item.item_id; // Verifique o formato do parâmetro id
+
+      totalQuantity += (quantity > 0 ? quantity : (itemId ? 1 : 0));
+    }
+  }
+
+  return totalQuantity;
+}
