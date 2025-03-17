@@ -1,0 +1,53 @@
+function() {
+  // Capturar a matriz items da variável dlv - ecommerce.items
+  var items = {{dlv - ecommerce.items}} || [];
+
+  // Capturar o código do país dinamicamente (ou usar "BR" como padrão)
+  var countryCode = "BR";
+
+  // Converter o código do país para maiúsculas, se existir
+  if (typeof countryCode === "string") {
+    countryCode = countryCode.toUpperCase();
+  } else {
+    countryCode = "BR"; // Garantir que o valor seja uma string válida
+  }
+
+  // Verificar se 'items' é um array válido
+  if (!Array.isArray(items) || items.length === 0) {
+    return []; // Retorna um array vazio se não houver itens
+  }
+
+  // Gerar uma nova matriz com o item_id formatado e os novos campos
+  var formattedItems = [];
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+
+    // Capturar os valores originais de item_id e item_variant
+    var originalItemId = item.item_id;
+    var itemVariant = item.item_variant;
+
+    // Validar se os campos existem
+    if (originalItemId && itemVariant) {
+      // Criar o novo item_id formatado
+      var formattedItemId = "shopify_" + countryCode + "_" + originalItemId + "_" + itemVariant;
+
+      // Criar um novo objeto com o item_id formatado e outros campos
+      var newItem = {
+        item_id: formattedItemId,
+        item_name: item.item_name,
+        item_category: item.item_category,
+        variant_name: item.variant_name, 
+        item_brand: item.item_brand,     
+        item_url: item.item_url,        
+        price: item.price,
+        quantity: item.quantity
+      };
+
+      // Adicionar o novo item à matriz formatada
+      formattedItems.push(newItem);
+    }
+  }
+
+  // Retornar a nova matriz formatada
+  return formattedItems;
+}
