@@ -1,0 +1,11 @@
+function() {
+  // Captura o array de itens do dataLayer
+  var items = {{dlv - items}} || []; // Supõe que você criou uma DLV para 'items'
+  
+  // Extrai todos os shopify_product_id
+  return items.map(function(item) {
+    return item.shopify_variant_id;
+  }).filter(function(id) {
+    return id !== undefined; // Remove valores inválidos
+  });
+}
