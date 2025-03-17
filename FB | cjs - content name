@@ -1,0 +1,4 @@
+function() {
+  var products = {{cjs – matriz itens formatada padrão Shopify – view_item}}; // Substitua pela variável que abre a matriz items
+  return products.reduce(function(arr, prod) { return arr.concat(prod.item_name); }, []).join(); // Verifique o formato do parâmetro name
+}
