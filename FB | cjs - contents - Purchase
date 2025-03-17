@@ -1,5 +1,5 @@
 function() {           // transforma matriz GA4 em matriz Contents do Facebook
-  var products = {{jsc - purchase - items}}; //matriz de produtos no padrão GA4
+  var products = {{cjs - purchase - items}}; //matriz de produtos no padrão GA4
   var tam = products.length
   var indice=0
   var viarray =[{"id":products[indice].item_id,
