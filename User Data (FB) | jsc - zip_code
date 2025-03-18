@@ -1,0 +1,10 @@
+function() {
+  // Captura o valor do CEP do dataLayer
+  var postalCode = {{User Data | dlv - order.address_info.postal_code}} || "";
+
+  // Garante que o CEP seja uma string e remove qualquer caractere não numérico
+  postalCode = postalCode.toString().replace(/\D/g, "");
+
+  // Retorna apenas os 5 primeiros números do CEP
+  return postalCode.substring(0, 5);
+}
