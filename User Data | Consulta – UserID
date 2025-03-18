@@ -3,11 +3,6 @@ function () {
     
     // Se tiver informação no DataLayer executa, senão proximo
     return {{User Data | dlv - order.customer_id}};
-  
-  } else if ({{User Data | Input_UserID}}) {
-    
-    // Se tiver informação no Input do site executa, senão proximo
-    return {{User Data | Input_UserID}};
 
   } else if ({{Set Cookies | Lead_UserID}}) {
     
