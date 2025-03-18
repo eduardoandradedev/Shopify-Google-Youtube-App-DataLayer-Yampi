@@ -11,7 +11,7 @@ function formatStateCookie() {
   };
 
   // Substitua pela variável do seu formulário
-  var stateInput = document.querySelector('[id="state"]');
+  var stateInput = document.querySelector('[id="state"]');  // Substitua pelo id do campo do formulário
 
   // Verifica se stateInput não é nulo ou indefinido e se contém um valor não vazio
   if (stateInput && stateInput.value.trim() !== '') {
@@ -33,7 +33,7 @@ function formatStateCookie() {
           : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
 
       // Define o cookie para todo o domínio e subdomínios
-      document.cookie = "LeadState=" + encodeURIComponent(stateMap[stateCode]) + 
+      document.cookie = "Lead_State=" + encodeURIComponent(stateMap[stateCode]) +  // Colocar a variável de cookie primário criada anteriormente (Lead_XXX)
                         "; expires=" + expirationDate.toUTCString() + 
                         "; path=/; domain=" + domain + 
                         "; Secure; SameSite=None;";
