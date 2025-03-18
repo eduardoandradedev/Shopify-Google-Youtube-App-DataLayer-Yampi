@@ -1,0 +1,20 @@
+function () {
+  if ({{User Data | dlv - order.address_info.state}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data | dlv - order.address_info.state}};
+  
+  } else if ({{User Data | Input_State}}) {
+    
+    // Se tiver informação no Input do site executa, senão proximo
+    return {{User Data | Input_State}};
+
+  } else if ({{Set Cookies | Lead_State}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | Lead_State}};
+
+  } else {
+    return undefined;
+  }
+}
