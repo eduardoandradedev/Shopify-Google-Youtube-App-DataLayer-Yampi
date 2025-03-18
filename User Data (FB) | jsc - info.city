@@ -1,0 +1,15 @@
+function() {
+  // Captura o valor da cidade do dataLayer
+  var city = {{User Data | dlv - order.address_info.city}} || "";
+
+  // Remove acentos usando unicode normalization
+  var normalized = city.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  // Converte para minúsculas
+  normalized = normalized.toLowerCase();
+
+  // Remove espaços e caracteres especiais, mantendo apenas letras de A-Z
+  normalized = normalized.replace(/[^a-z]/g, "");
+
+  return normalized;
+}
