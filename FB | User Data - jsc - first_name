@@ -1,0 +1,15 @@
+function() {
+  // Captura o valor do primeiro nome do dataLayer
+  var firstName = {{User Data | dlv - order.customer.first_name}} || "";
+
+  // Remove acentos usando unicode normalization
+  var normalized = firstName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  // Converte para minúsculas
+  normalized = normalized.toLowerCase();
+
+  // Remove caracteres especiais e mantém apenas letras de A-Z
+  normalized = normalized.replace(/[^a-z]/g, "");
+
+  return normalized;
+}
