@@ -1,6 +1,6 @@
 function formatCitySetCookie() {
   // Substitua pela variável do seu formulário
-  var city = document.querySelector('[id="city"]');
+  var city = document.querySelector('[id="city"]');   // Substitua pelo id do campo do formulário
 
   // Verifica se city é um objeto válido, não é nulo e contém um valor não vazio
   if (city && city.value.trim() !== '') {
@@ -18,7 +18,7 @@ function formatCitySetCookie() {
         : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
 
     // Define o cookie para todo o domínio e subdomínios
-    document.cookie = "LeadCity=" + encodeURIComponent(cityValue) + 
+    document.cookie = "Lead_City=" + encodeURIComponent(cityValue) +  // Colocar a variável de cookie primário criada anteriormente (Lead_City)
                       "; expires=" + expirationDate.toUTCString() + 
                       "; path=/; domain=" + domain + 
                       "; Secure; SameSite=None;";
