@@ -24,7 +24,7 @@ function formatCountrySetCookie() {
           : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
 
       // Define o cookie para todo o domínio e subdomínios
-      document.cookie = "LeadCountry=" + encodeURIComponent(countries[countrySelect]) + 
+      document.cookie = "Lead_Country=" + encodeURIComponent(countries[countrySelect]) +  // Colocar a variável de cookie primário criada anteriormente (Lead_XXX)
                         "; expires=" + expirationDate.toUTCString() + 
                         "; path=/; domain=" + domain + 
                         "; Secure; SameSite=None;";
