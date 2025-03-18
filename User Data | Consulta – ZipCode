@@ -1,0 +1,20 @@
+function () {
+  if ({{User Data (FB) | jsc - zip_code}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data (FB) | jsc - zip_code}};
+  
+  } else if ({{User Data | Input_ZipCode}}) {
+    
+    // Se tiver informação no Input do site executa, senão proximo
+    return {{User Data | Input_ZipCode}};
+
+  } else if ({{Set Cookies | Lead_ZipCode}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | Lead_ZipCode}};
+
+  } else {
+    return undefined;
+  }
+}
