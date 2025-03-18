@@ -17,7 +17,7 @@ function formatEmailSetCookie() {
         : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
 
     // Define o cookie para todo o domínio e subdomínios
-    document.cookie = "LeadEmail=" + encodeURIComponent(emailValue) + 
+    document.cookie = "Lead_Email=" + encodeURIComponent(emailValue) +     // Colocar a variável de cookie primário criada anteriormente (Lead_Email)
                       "; expires=" + expirationDate.toUTCString() + 
                       "; path=/; domain=" + domain + 
                       "; Secure; SameSite=None;";
