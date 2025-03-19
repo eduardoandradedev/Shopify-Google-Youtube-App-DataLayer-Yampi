@@ -1,0 +1,223 @@
+<script>
+(function(){
+    var cookieName = "Lead_Email"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.customer.email}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_FirstName"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.customer.first_name}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_LastName"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.customer.last_name}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_PhoneNumber"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.customer.phone_number}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_City"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.address_info.city}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_State"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.address_info.state}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_ZipCode"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.address_info.postal_code}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_Country"; // Nome do cookie
+    var cookieValue = "{{User Data | dlv - order.address_info.country_code}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
+
+
+<script>
+(function(){
+    var cookieName = "Lead_Street"; // Nome do cookie
+    var cookieValue = "{{USER DATA | dlv - order.address_info.hashed_street_address}}" || ""; // Valor do cookie
+    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
+
+    var date = new Date();
+    date.setTime(date.getTime() + expirationTime);
+    var expires = "expires=" + date.toUTCString();
+
+    // Obtém o domínio de nível superior, removendo subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie
+    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
+                      "; " + expires + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+})();
+</script>
