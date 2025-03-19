@@ -76,7 +76,7 @@
 <script>
 (function(){
     var cookieName = "Lead_PhoneNumber"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.customer.phone_number}}" || ""; // Valor do cookie
+    var cookieValue = "{{User Data (GADS) | cjs - phone_number}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -126,7 +126,7 @@
 <script>
 (function(){
     var cookieName = "Lead_State"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.address_info.state}}" || ""; // Valor do cookie
+    var cookieValue = "{{Lookup Table (GADs) | dlv - order.address_info.city}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
