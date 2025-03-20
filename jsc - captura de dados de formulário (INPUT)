@@ -1,0 +1,5 @@
+function () {
+  var a = document.querySelector('input#form-field-email').value;  //substituir o seletor - input#(ID do campo do formulário)
+
+  return a;
+}
