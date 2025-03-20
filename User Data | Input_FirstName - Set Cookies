@@ -2,11 +2,13 @@ function formatFirstNameSetCookie() {
   // Seleciona o campo pelo ID
   var firstnameInput = document.querySelector('[id="firstname"]');   // Substitua pelo id do campo do formulário
 
-  // Verifica se o campo existe e contém um valor
-  if (firstnameInput && firstnameInput.value.trim() !== '') {
+    // Verifica se o campo existe e contém um valor
+    if (firstnameInput && firstnameInput.value.trim() !== '') {
     var firstnameValue = firstnameInput.value.trim().toLowerCase()
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-      .replace(/[^a-zA-Z]/g, ""); // Mantém apenas letras
+   
+    // Tratamento para Facebook - Retirar os Comentários abaixo //
+    /*  .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+        .replace(/[^a-zA-Z]/g, ""); // Mantém apenas letras   */
 
     // Define a expiração do cookie para 30 dias a partir de agora
     var expirationDate = new Date();
