@@ -1,6 +1,6 @@
 function formatEmailSetCookie() {
   // Substitua pela variável do seu formulário
-  var email = document.querySelector('[id="email"]'); // Substitua pelo id do campo do formulário
+  var email = document.querySelector('[id="email1"]'); // Substitua pelo id do campo do formulário
 
   // Verifica se email não é nulo, indefinido e se contém um valor não vazio
   if (email && email.value.trim() !== '') {
