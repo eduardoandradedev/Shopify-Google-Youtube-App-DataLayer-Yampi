@@ -1,3 +1,8 @@
+// Esta função captura o dado no campo Input e armazena no Cookie (Linha 27)
+// As linhas 13 a 15 tratam o nome para o Facebook
+// O Google Ads não precisa deste tratamento
+
+
 function formatFirstNameSetCookie() {
   // Seleciona o campo pelo ID
   var firstnameInput = document.querySelector('[id="firstname"]');   // Substitua pelo id do campo do formulário
