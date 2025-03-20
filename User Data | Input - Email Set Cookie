@@ -1,0 +1,28 @@
+function formatEmailSetCookie() {
+  // Substitua pela variável do seu formulário
+  var email = document.querySelector('[id="email"]');
+
+  // Verifica se email não é nulo, indefinido e se contém um valor não vazio
+  if (email && email.value.trim() !== '') {
+    var emailValue = email.value.trim().toLowerCase(); // Converte para letras minúsculas e remove espaços extras
+
+    // Define a expiração do cookie para 30 dias a partir da data atual
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
+
+    // Obtém o domínio principal para cobrir subdomínios
+    var domainParts = location.hostname.split('.');
+    var domain = domainParts.length > 2 
+        ? "." + domainParts.slice(-2).join('.')  // Usa os dois últimos segmentos
+        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+    // Define o cookie para todo o domínio e subdomínios
+    document.cookie = "LeadEmail=" + encodeURIComponent(emailValue) + 
+                      "; expires=" + expirationDate.toUTCString() + 
+                      "; path=/; domain=" + domain + 
+                      "; Secure; SameSite=None;";
+
+    return emailValue;
+  }
+  return undefined;
+}
