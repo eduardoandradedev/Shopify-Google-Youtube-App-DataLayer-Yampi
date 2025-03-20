@@ -1,12 +1,18 @@
+// Esta função captura o dado no campo Sobrenome no input do checkout e armazena no Cookie Lead_LastName na linha 27
+// As linhas 13 a 15 tratam o dado para o facebook, porém o Google tem outro padrão
+
+
 function formatLastNameSetCookie() {
   // Seleciona o campo pelo ID
-  var lastnameInput = document.querySelector('[id="lastname"]');   // Substitua pelo id do campo do formulário
+  var lastnameInput = document.querySelector('[id="lastname"]');
 
   // Verifica se o campo existe e contém um valor
   if (lastnameInput && lastnameInput.value.trim() !== '') {
     var lastnameValue = lastnameInput.value.trim().toLowerCase()
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
-      .replace(/[^a-zA-Z]/g, ""); // Mantém apenas letras
+    
+    // Trata o campo nome para o Facebook - Comentado por causa do Google Ads
+    /*  .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove acentos
+      .replace(/[^a-zA-Z]/g, ""); // Mantém apenas letras */
 
     // Define a expiração do cookie para 30 dias a partir de agora
     var expirationDate = new Date();
@@ -19,7 +25,7 @@ function formatLastNameSetCookie() {
         : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
 
     // Define o cookie para todo o domínio e subdomínios
-    document.cookie = "Lead_LastName=" + encodeURIComponent(lastnameValue) +   // Colocar a variável de cookie primário criada anteriormente (Lead_XXX)
+    document.cookie = "LeadLastName=" + encodeURIComponent(lastnameValue) + 
                       "; expires=" + expirationDate.toUTCString() + 
                       "; path=/; domain=" + domain + 
                       "; Secure; SameSite=None;";
