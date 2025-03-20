@@ -1,0 +1,38 @@
+function formatZipCodeSetCookie() {
+  // Substitua pela variável do seu formulário
+  var zipcodeInput = document.querySelector('[id="zipcode"]');
+
+  // Verifica se zipcodeInput não é nulo ou indefinido e se contém um valor não vazio
+  if (zipcodeInput && zipcodeInput.value.trim() !== '') {
+    var zipcodeValue = zipcodeInput.value.trim();
+
+    // Remove caracteres não numéricos e captura apenas os primeiros 5 dígitos
+    var zipcodeFormatted = zipcodeValue.replace(/\D/g, '').slice(0, 5);
+
+    if (zipcodeFormatted.length === 5) {
+      // Define a expiração do cookie para 30 dias a partir de agora
+      var expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 30);
+
+      // Obtém o domínio principal para cobrir subdomínios
+      var domainParts = location.hostname.split('.');
+      var domain = domainParts.length > 2 
+          ? "." + domainParts.slice(-2).join('.')  // Usa os dois últimos segmentos
+          : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
+
+      // Define o cookie para todo o domínio e subdomínios
+      document.cookie = "Lead_ZipCode=" + encodeURIComponent(zipcodeFormatted) +   // Colocar o nome do Cookie criado para o CPF (Lead_ZipCode)
+                        "; expires=" + expirationDate.toUTCString() + 
+                        "; path=/; domain=" + domain + 
+                        "; Secure; SameSite=None;";
+
+      return zipcodeFormatted;
+    } else {
+      // Retorna uma string vazia se não encontrar um CEP válido com pelo menos 5 dígitos
+      return "";
+    }
+  }
+
+  // Retorna undefined se o input for nulo ou o valor for vazio
+  return undefined;
+}
