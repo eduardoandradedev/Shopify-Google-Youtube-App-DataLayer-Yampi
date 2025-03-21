@@ -1,6 +1,6 @@
 function() {
   // Captura os itens originais do evento
-  var originalItems = {{dlv - ecommerce.items}} || [];
+  var originalItems = {{dlv - eventModel.items}} || [];
   // Captura os shopify_product_id do pedido
   var shopifyProductIds = {{dlv - order.optionsIds}} || [];
   
