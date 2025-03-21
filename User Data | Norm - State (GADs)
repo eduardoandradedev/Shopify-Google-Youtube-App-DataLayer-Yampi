@@ -1,0 +1,43 @@
+function() {
+  // Captura a variável do GTM (DLV)
+  var stateAbbr = {{User Data | State (DLV) - order.address_info.state}};
+
+  if (!stateAbbr) return null; // Se o valor for nulo, retorna null
+
+  // Mapeamento de siglas para nomes completos dos estados do Brasil
+  var statesMap = {
+    "AC": "Acre",
+    "AL": "Alagoas",
+    "AP": "Amapá",
+    "AM": "Amazonas",
+    "BA": "Bahia",
+    "CE": "Ceará",
+    "DF": "Distrito Federal",
+    "ES": "Espírito Santo",
+    "GO": "Goiás",
+    "MA": "Maranhão",
+    "MT": "Mato Grosso",
+    "MS": "Mato Grosso do Sul",
+    "MG": "Minas Gerais",
+    "PA": "Pará",
+    "PB": "Paraíba",
+    "PR": "Paraná",
+    "PE": "Pernambuco",
+    "PI": "Piauí",
+    "RJ": "Rio de Janeiro",
+    "RN": "Rio Grande do Norte",
+    "RS": "Rio Grande do Sul",
+    "RO": "Rondônia",
+    "RR": "Roraima",
+    "SC": "Santa Catarina",
+    "SP": "São Paulo",
+    "SE": "Sergipe",
+    "TO": "Tocantins"
+  };
+
+  // Normaliza a sigla (remove espaços extras e converte para maiúsculas)
+  var cleanedState = stateAbbr.trim().toUpperCase();
+
+  // Retorna o nome completo do estado ou a própria sigla se não encontrar correspondência
+  return statesMap[cleanedState] || cleanedState;
+}
