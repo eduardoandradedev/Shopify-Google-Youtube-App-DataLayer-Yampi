@@ -1,7 +1,7 @@
 <script>
 (function(){
     var cookieName = "Lead_Email"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.customer.email}}" || ""; // Valor do cookie
+    var cookieValue = "{{User Data | Email (DLV) - order.customer.email}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -25,8 +25,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_FirstName"; // Nome do cookie
-    var cookieValue = "{{User Data (FB) | jsc - first_name}}" || ""; // Valor do cookie
+    var cookieName = "Lead_FirstName_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | Norm - FirstName (META)}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -50,8 +50,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_LastName"; // Nome do cookie
-    var cookieValue = "{{User Data (FB) | jsc - last_name}}" || ""; // Valor do cookie
+    var cookieName = "Lead_LastName_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | Norm - LastName (META)}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -75,8 +75,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_PhoneNumber"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.customer.phone_number}}" || ""; // Valor do cookie
+    var cookieName = "Lead_PhoneNumber_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | PhoneNumber (DLV) - order.customer.phone_number}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -100,8 +100,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_City"; // Nome do cookie
-    var cookieValue = "{{User Data (FB) | jsc - info.city}}" || ""; // Valor do cookie
+    var cookieName = "Lead_City_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | Norm - City (META)}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -125,8 +125,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_State"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.address_info.state}}" || ""; // Valor do cookie
+    var cookieName = "Lead_State_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | State (DLV) - order.address_info.state}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -150,8 +150,8 @@
 
 <script>
 (function(){
-    var cookieName = "Lead_ZipCode"; // Nome do cookie
-    var cookieValue = "{{User Data (FB) | jsc - zip_code}}" || ""; // Valor do cookie
+    var cookieName = "Lead_ZipCode_Meta"; // Nome do cookie
+    var cookieValue = "{{User Data | Norm - ZipCode (META)}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -176,7 +176,7 @@
 <script>
 (function(){
     var cookieName = "Lead_Country"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.address_info.country_code}}" || ""; // Valor do cookie
+    var cookieValue = "{{User Data | Country (DLV) - order.address_info.country_code}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
@@ -201,7 +201,7 @@
 <script>
 (function(){
     var cookieName = "Lead_UserID"; // Nome do cookie
-    var cookieValue = "{{User Data | dlv - order.customer_id}}" || ""; // Valor do cookie
+    var cookieValue = "{{User Data | OrderID (DLV) - order.customer_id}}" || ""; // Valor do cookie
     var expirationTime = 2592000 * 1000; // Um mês em milissegundos
 
     var date = new Date();
