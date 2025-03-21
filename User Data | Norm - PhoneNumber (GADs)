@@ -1,6 +1,6 @@
 function() {
   // Obtém o valor da variável que contém o número de telefone
-  var phoneNumber = {{User Data | dlv - order.customer.phone_number}};
+  var phoneNumber = {{User Data | PhoneNumber (DLV) - order.customer.phone_number}};
   
   // Verifica se o número existe
   if (!phoneNumber) {
