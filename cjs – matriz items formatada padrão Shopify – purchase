@@ -1,0 +1,23 @@
+function() {
+    var originalItems = {{dlv - eventModel.items}}; // Variável dlv da matriz inteira capturada na camada de dados
+    var shopify_product_id = {{cjs - shopify_product_id}}; // Variável jsc capturada na camada de dados
+    var shopify_variant_id = {{cjs - shopify_variant_id}}; // Variável jsc capturada na camada de dados
+    var formattedItems = [];
+
+    for (var i = 0; i < originalItems.length; i++) {
+        var item = originalItems[i];
+        formattedItems.push({
+            "item_id": "shopify_BR_" + item.shopify_product_id + "_" + item.shopify_variant_id,
+            "item_variant": item.grids && item.grids[0] ? item.grids[0].value : null,
+            "item_name": item.name,
+            "price": parseFloat(item.price_total),
+            "item_brand": item.brand ? item.brand.name : null,
+            "item_category": item.categories_names && item.categories_names.length > 0 ? item.categories_names[0] : null,
+            "item_category2": item.categories_names && item.categories_names.length > 1 ? item.categories_names[1] : null,
+            "item_category3": item.categories_names && item.categories_names.length > 2 ? item.categories_names[2] : null,
+            "quantity": item.quantity
+        });
+    }
+
+    return formattedItems;
+}
