@@ -1,0 +1,12 @@
+function() {
+  var products = {{cjs – matriz items formatada padrão Shopify – purchase}}; // Substitua pela variável que abre a matriz items
+  var tam = products.length
+  var TotalValue= []
+  var indice=0
+  while (tam !=0){
+        TotalValue.push(products[indice].item_id) // Verifique o formato do parâmetro id
+        var tam=tam-1
+        var indice=indice+1
+      }  
+  return TotalValue;
+}
