@@ -2,23 +2,15 @@
 (function(){
     var cookieName = "Lead_Email"; // Nome do cookie
     var cookieValue = "{{User Data | Email (DLV) - order.customer.email}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -27,23 +19,15 @@
 (function(){
     var cookieName = "Lead_FirstName_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | FirstName (DLV) - order.customer.first_name}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -52,23 +36,15 @@
 (function(){
     var cookieName = "Lead_LastName_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | LastName (DLV) - order.customer.last_name}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -77,23 +53,15 @@
 (function(){
     var cookieName = "Lead_PhoneNumber_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | Norm - PhoneNumber (GADs)}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -102,23 +70,15 @@
 (function(){
     var cookieName = "Lead_City_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | City (DLV) - order.address_info.city}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -127,23 +87,15 @@
 (function(){
     var cookieName = "Lead_State_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | Norm - State (GADs)}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -152,23 +104,15 @@
 (function(){
     var cookieName = "Lead_ZipCode_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | ZipCode (DLV) - order.address_info.postal_code}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -177,23 +121,15 @@
 (function(){
     var cookieName = "Lead_Country"; // Nome do cookie
     var cookieValue = "{{User Data | Country (DLV) - order.address_info.country_code}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
 
@@ -202,22 +138,14 @@
 (function(){
     var cookieName = "Lead_Hashed_FullStreet_GADs"; // Nome do cookie
     var cookieValue = "{{User Data | Street (DLV) - order.address_info. hashed_street_address}}" || ""; // Valor do cookie
-    var expirationTime = 2592000 * 1000; // Um mês em milissegundos
-
-    var date = new Date();
-    date.setTime(date.getTime() + expirationTime);
-    var expires = "expires=" + date.toUTCString();
-
-    // Obtém o domínio de nível superior, removendo subdomínios
-    var domainParts = location.hostname.split('.');
-    var domain = domainParts.length > 2 
-        ? "." + domainParts.slice(-2).join('.')  // Considera apenas os dois últimos segmentos
-        : "." + location.hostname.replace(/^www\./i, ""); // Remove 'www.' para cobrir subdomínios
-
-    // Define o cookie
-    document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + 
-                      "; " + expires + 
-                      "; path=/; domain=" + domain + 
-                      "; Secure; SameSite=None;";
+    var expirationTime = 34560000; // Um ano em segundos
+     expirationTime = expirationTime * 1000;
+  
+     var date = new Date(); 
+     var dateTimeNow = date.getTime(); 
+ 
+     date.setTime(dateTimeNow + expirationTime);
+     var date = date.toUTCString();
+     document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br/";  
 })();
 </script>
