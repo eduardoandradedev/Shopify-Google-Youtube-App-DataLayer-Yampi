@@ -1,9 +1,9 @@
 function() {
-  // Captura o valor do primeiro nome do dataLayer
-  var firstName = {{User Data | dlv - order.customer.first_name}} || "";
+  // Captura o valor do sobrenome do dataLayer
+  var lastName = {{User Data | LastName (DLV) - order.customer.last_name}} || "";
 
   // Remove acentos usando unicode normalization
-  var normalized = firstName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  var normalized = lastName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   // Converte para minúsculas
   normalized = normalized.toLowerCase();
