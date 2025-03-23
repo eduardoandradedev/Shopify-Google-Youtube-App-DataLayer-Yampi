@@ -1,0 +1,4 @@
+function () {
+var a = document.querySelector("input#email1").value;
+return a;
+}
