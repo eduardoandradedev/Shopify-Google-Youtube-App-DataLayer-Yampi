@@ -1,0 +1,14 @@
+function() {
+  // Captura o valor do campo de nome no formulário
+  var fullName = document.querySelector("input#name").value;
+
+  // Verifica se o campo está vazio
+  if (!fullName) {
+    return undefined; // Retorna undefined se o campo estiver vazio
+  }
+
+  // Separa o primeiro nome
+  var firstName = fullName.trim().split(/\s+/)[0] || ''; // Pega a primeira parte do nome
+
+  return firstName;
+}
