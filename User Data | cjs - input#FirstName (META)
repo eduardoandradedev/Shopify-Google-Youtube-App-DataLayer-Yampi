@@ -1,0 +1,38 @@
+function() {
+  // Captura o valor do campo de nome no formulário
+  var fullName = document.querySelector("input#name").value;
+
+  // Verifica se o campo está vazio
+  if (!fullName) {
+    return undefined; // Retorna undefined se o campo estiver vazio
+  }
+
+  // Separa o primeiro nome
+  var firstName = fullName.trim().split(/\s+/)[0] || ''; // Pega a primeira parte do nome
+
+  // Função para tratar o nome para o Facebook
+  function sanitizeForFacebook(name) {
+    if (!name) return ''; // Retorna vazio se o nome for nulo ou indefinido
+
+    // Remove espaços e converte para minúsculas
+    name = name.replace(/\s+/g, '').toLowerCase();
+
+    // Remove acentos e caracteres especiais usando uma tabela de substituição
+    name = removeAccents(name);
+
+    // Remove quaisquer caracteres que não sejam letras minúsculas ou números
+    name = name.replace(/[^a-z0-9]/g, '');
+
+    return name;
+  }
+
+  // Função auxiliar para remover acentos
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  // Trata o primeiro nome para o Facebook
+  var facebookFirstName = sanitizeForFacebook(firstName);
+
+  return facebookFirstName;
+}
