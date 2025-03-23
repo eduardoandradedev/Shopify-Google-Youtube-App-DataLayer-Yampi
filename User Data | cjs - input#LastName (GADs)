@@ -1,0 +1,17 @@
+function() {
+  // Captura o valor do campo de nome no formulário
+  var fullName = document.querySelector("input#name").value;
+
+  // Verifica se o campo está vazio
+  if (!fullName) {
+    return undefined; // Retorna undefined se o campo estiver vazio
+  }
+
+  // Divide o nome completo em partes baseadas em espaços
+  var nameParts = fullName.trim().split(/\s+/);
+
+  // Captura o último nome (última parte do array)
+  var lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : ''; // Pega a última parte do nome
+
+  return lastName;
+}
