@@ -1,0 +1,21 @@
+function() {
+  // Captura o valor do campo de telefone no formulário
+  var phoneNumber = document.querySelector("input#homephone").value;
+
+  // Verifica se o campo está vazio
+  if (!phoneNumber) {
+    return undefined; // Retorna undefined se o campo estiver vazio
+  }
+
+  // Remove todos os caracteres não numéricos
+  phoneNumber = phoneNumber.replace(/\D/g, '');
+
+  // Adiciona o código do país (55) se necessário
+  if (phoneNumber.startsWith('55')) {
+    // Se o número já começar com 55, mantém como está
+    return phoneNumber;
+  } else {
+    // Caso contrário, adiciona o prefixo 55
+    return '55' + phoneNumber;
+  }
+}
