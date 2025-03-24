@@ -1,0 +1,20 @@
+function () {
+  if ({{User Data | DLV LastName - order.customer.last_name}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data | DLV LastName - order.customer.last_name}};
+  
+  } else if ({{User Data | INPUT - LastName (GADs)}}) {
+    
+    // Se tiver informação no Input do site executa, senão proximo
+    return {{User Data | INPUT - LastName (GADs)}};
+
+  } else if ({{Set Cookies | LastName (GADs)}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | LastName (GADs)}};
+
+  } else {
+    return undefined;
+  }
+}
