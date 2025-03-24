@@ -1,0 +1,36 @@
+<script>
+(function() {
+
+    function setCookie(cookieName, cookieValue) {
+        var expirationTime = 63072000; // Um mês em segundos
+        expirationTime = expirationTime * 1000; // Converte expirationtime para milissegundos
+        var date = new Date(); 
+        var dateTimeNow = date.getTime(); 
+
+        date.setTime(dateTimeNow + expirationTime); // Define o tempo de expiração (Tempo agora + um mês)
+        var expirationDate = date.toUTCString(); // Converte milissegundos para string de tempo UTC
+        
+        document.cookie = cookieName + "=" + cookieValue + "; SameSite=None; Secure; expires=" + expirationDate + "; path=/; domain=.seusite.com.br";
+    }
+
+    // Dados dos cookies em um objeto
+    var cookiesData = {
+        'ck_em': '{{dtl - email - sign up}}',
+        'ck_fn': '{{dtl - first name - sign up}}',
+        'ck_ln': '{{dtl - last_name - sign up}}',
+        'ck_ct': '{{dtl - city - sign up}}',
+        'ck_st': '{{dtl - state - sign up}}',
+        'ck_ge': '{{dtl - gender - sign up}}',
+        'ck_dob': '{{dtl - dob - sign up}}',
+        'ck_cep': '{{jsp - postal code - sign up (correto)}}',
+        'ck_ph': '{{jsp - phone - sign up (correto)}}',
+    };
+    
+    // Usando um loop para percorrer o objeto e definir cada cookie
+    for (var name in cookiesData) {
+        setCookie(name, cookiesData[name]);
+    }
+
+})();
+
+</script>
