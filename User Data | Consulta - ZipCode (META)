@@ -1,0 +1,20 @@
+function () {
+  if ({{User Data | NORM - ZipCode (META)}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data | NORM - ZipCode (META)}};
+  
+  } else if ({{User Data | INPUT - ZipCode (META)}}) {
+    
+    // Se tiver informação no Input do site executa, senão proximo
+    return {{User Data | INPUT - ZipCode (META)}};
+
+  } else if ({{Set Cookies | ZipCode (META)}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | ZipCode (META)}};
+
+  } else {
+    return undefined;
+  }
+}
