@@ -1,0 +1,15 @@
+function () {
+  if ({{User Data | DLV UserID - order.customer_id}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data | DLV UserID - order.customer_id}};
+  
+  } else if ({{Set Cookies | UserID (META)}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | UserID (META)}};
+
+  } else {
+    return undefined;
+  }
+}
