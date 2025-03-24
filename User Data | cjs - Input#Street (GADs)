@@ -1,0 +1,16 @@
+function() {
+  // Captura o valor do campo de rua
+  var street = document.querySelector("input#street").value || '';   // Seletor do campo Rua
+
+  // Captura o valor do campo de número
+  var number = document.querySelector("input#number").value || '';   // Seletor do campo Número
+
+  // Remove espaços extras no início e no fim de cada valor
+  street = street.trim();
+  number = number.trim();
+
+  // Combina os valores, separando-os por uma vírgula e um espaço
+  var fullAddress = street + (number ? ', ' + number : '');
+
+  return fullAddress;
+}
