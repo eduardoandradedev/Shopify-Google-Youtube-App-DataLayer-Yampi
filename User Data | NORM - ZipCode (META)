@@ -1,6 +1,6 @@
 function() {
   // Captura o valor do CEP do dataLayer
-  var postalCode = {{User Data | ZipCode (DLV) - order.address_info.postal_code}} || "";
+  var postalCode = {{User Data | DLV ZipCode - order.address_info.postal_code}} || "";
 
   // Garante que o CEP seja uma string e remove qualquer caractere não numérico
   postalCode = postalCode.toString().replace(/\D/g, "");
