@@ -1,0 +1,106 @@
+// GADs
+<script>
+ (function(){
+ var cookieName = "amk_input-em"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - Input#Email (ALL)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+<script>
+ (function(){
+ var cookieName = "amk_input-fn_gads"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - input#FirstName (GADs)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+<script>
+ (function(){
+ var cookieName = "amk_input-ln_gads"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - input#LastName (GADs)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+<script>
+ (function(){
+ var cookieName = "amk_input-pn_gads"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - input#PhoneNumber (GADs)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+// META
+<script>
+ (function(){
+ var cookieName = "amk_input-fn_meta"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - Input#FirstName (META)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+<script>
+ (function(){
+ var cookieName = "amk_input-ln_meta"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - input#LastName (META)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
+
+<script>
+ (function(){
+ var cookieName = "amk_input-pn_meta"; // Nome do Cookie
+ var cookieValue = {{User Data | cjs - input#PhoneNumber (META)}}; // Valor do Cookie
+ var expirationTime = 34560000; // Um ano em segundos
+ expirationTime = expirationTime * 1000;
+ var date = new Date(); 
+ var dateTimeNow = date.getTime(); 
+
+ date.setTime(dateTimeNow + expirationTime);
+ var date = date.toUTCString();
+ document.cookie = cookieName+"="+cookieValue+"; SameSite=None; Secure; expires="+date+"; path=/; domain=.arvoremagicakids.com.br";  
+})();
+</script>
