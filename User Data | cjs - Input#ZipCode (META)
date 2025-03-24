@@ -1,0 +1,17 @@
+function() {
+  // Captura o valor do campo de CEP
+  var zipCode = document.querySelector("input#zipcode").value;
+
+  // Verifica se o campo está vazio
+  if (!zipCode) {
+    return undefined; // Retorna undefined se o campo estiver vazio
+  }
+
+  // Remove todos os caracteres não numéricos
+  zipCode = zipCode.replace(/\D/g, '');
+
+  // Limita o resultado aos primeiros 5 dígitos
+  zipCode = zipCode.substring(0, 5);
+
+  return zipCode;
+}
