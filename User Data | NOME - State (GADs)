@@ -1,6 +1,6 @@
 function() {
   // Captura a variável do GTM (DLV)
-  var stateAbbr = {{User Data | State (DLV) - order.address_info.state}};
+  var stateAbbr = {{User Data | DLV State - order.address_info.state}};
 
   if (!stateAbbr) return null; // Se o valor for nulo, retorna null
 
