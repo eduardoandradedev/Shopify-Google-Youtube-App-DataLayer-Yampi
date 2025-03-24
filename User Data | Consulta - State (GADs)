@@ -1,0 +1,15 @@
+function () {
+  if ({{User Data | NORM - State (GADs)}}) {
+    
+    // Se tiver informação no DataLayer executa, senão proximo
+    return {{User Data | NORM - State (GADs)}};
+  
+  } else if ({{Set Cookies | State (GADs)}}) {
+    
+    // Se tiver informação nos Cookies executa, senão vazio
+    return {{Set Cookies | State (GADs)}};
+
+  } else {
+    return undefined;
+  }
+}
