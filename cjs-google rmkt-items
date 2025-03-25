@@ -1,0 +1,9 @@
+function() {
+  var productsId = {{FB | cjs - content_ids}}; // Substitua pela variável que abre a matriz contents_ids
+  return ecommerceProductData = productsId.map(function(item_id) {
+    return{
+      id: item_id,  // Verifique o formato do parâmetro id
+      google_business_vertical: 'retail',    
+    }
+  });
+}
