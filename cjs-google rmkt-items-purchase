@@ -1,0 +1,9 @@
+function() {
+  var productsId = {{cjs - items - purchase}}; // Substitua pela variável que abre a matriz items no evento de compra
+  return ecommerceProductData = productsId.map(function(item) {
+    return {
+      id: item.item_id,  // Acessa corretamente a propriedade item_id
+      google_business_vertical: 'retail',    
+    };
+  });
+}
