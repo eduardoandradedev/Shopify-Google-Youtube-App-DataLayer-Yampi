@@ -1,8 +1,8 @@
 function() {
   // Captura os itens originais do evento
-  var originalItems = {{dlv - eventModel.items}} || [];
+  var originalItems = {{dlv | eventModel.items}} || [];
   // Captura os shopify_product_id do pedido
-  var shopifyProductIds = {{dlv - order.optionsIds}} || [];
+  var shopifyProductIds = {{dlv | order.optionsIds}} || [];
   
   // Formata os itens com o novo item_id
   var formattedItems = originalItems.map(function(item, index) {
