@@ -1,0 +1,27 @@
+De 2023-05-22 - com hífen no meio
+Para 20230522 - para AAAAMMDD
+
+
+function() {
+var entrada = {{jsp - Variavel Dooca - Customer.birthday}};  
+entrada = entrada.replace(/-/g, "");
+return entrada;
+}
+
+
+
+De 03/02/1989 para 19890203
+
+function() {
+  // Substitua 'nomeDaSuaVariavel' pelo nome da variável que contém a data.
+  var dataOriginal = {{nomeDaSuaVariavel}}; // Exemplo: "03/02/1989"
+  
+  // Divide a string de data em partes: dia, mês e ano
+  var partesData = dataOriginal.split("/");
+  
+  // Reorganiza as partes no formato "aaaammdd"
+  var dataFormatada = partesData[2] + partesData[1] + partesData[0];
+  
+  // Retorna a data formatada
+  return dataFormatada;
+}
