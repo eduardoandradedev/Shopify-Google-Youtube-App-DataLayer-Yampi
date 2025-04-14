@@ -1,6 +1,6 @@
 function() {
   // Captura o valor do sobrenome do dataLayer
-  var lastName = {{DLV User Data | LastName - order.customer.last_name}} || "";
+  var lastName = {{[USER DATA] LastName | dlv checkout - order.customer.last_name}} || "";
 
   // Remove acentos usando unicode normalization
   var normalized = lastName.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
