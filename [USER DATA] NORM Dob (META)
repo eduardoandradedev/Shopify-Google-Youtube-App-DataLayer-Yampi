@@ -1,0 +1,5 @@
+function() {
+var entrada = [USER DATA] DLV Checkout | Dob - order.customer.birthday;  
+entrada = entrada.replace(/-/g, "");
+return entrada;
+}
