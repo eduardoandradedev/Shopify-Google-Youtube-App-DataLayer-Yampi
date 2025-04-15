@@ -1,0 +1,17 @@
+function() {
+    // Captura o valor da variável ABC (nome da cidade)
+    var cityName = {{ABC}}; // Substitua "ABC" pelo nome exato da sua variável no GTM
+
+    if (!cityName) {
+        return ''; // Retorna vazio se a variável estiver indefinida ou nula
+    }
+
+    // Remove espaços
+    var formatted = cityName.replace(/\s+/g, '');
+    // Remove acentos e converte para minúsculas
+    formatted = formatted.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    // Remove caracteres especiais, mantendo apenas letras de A a Z
+    formatted = formatted.replace(/[^a-z]/g, '');
+
+    return formatted; // Retorna o nome formatado
+}
