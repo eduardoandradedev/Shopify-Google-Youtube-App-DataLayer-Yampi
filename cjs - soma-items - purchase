@@ -1,5 +1,5 @@
 function() {
-  var dataLayer = {{cjs - items - purchase}}; // Substitua pela variável que abre a matriz items
+  var dataLayer = {{cjs | items [purchase]}}; // Substitua pela variável que abre a matriz items
 
   var totalQuantity = 0;
 
