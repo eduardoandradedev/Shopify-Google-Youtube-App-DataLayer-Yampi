@@ -1,6 +1,6 @@
 function() {
   // Capturar a matriz items da variável dlv - ecommerce.items
-  var items = {{dlv - ecommerce.items}} || [];
+  var items = {{dlv | ecommerce.items}} || [];
 
   // Capturar o código do país dinamicamente (ou usar "BR" como padrão)
   var countryCode = "BR";
@@ -31,6 +31,20 @@ function() {
       // Criar o novo item_id formatado
       var formattedItemId = "shopify_" + countryCode + "_" + originalItemId + "_" + itemVariant;
 
+      // Converter quantity para número inteiro
+      var quantityAsNumber = parseInt(item.quantity, 10); // Converte para número inteiro [[1]]
+      if (isNaN(quantityAsNumber)) {
+        console.error("Valor inválido para quantity:", item.quantity);
+        quantityAsNumber = 0; // Define um valor padrão (ex.: 0) se for inválido
+      }
+
+      // Converter price para número decimal
+      var priceAsNumber = parseFloat(item.price); // Converte para número decimal [[1]]
+      if (isNaN(priceAsNumber)) {
+        console.error("Valor inválido para price:", item.price);
+        priceAsNumber = 0; // Define um valor padrão (ex.: 0) se for inválido
+      }
+
       // Criar um novo objeto com o item_id formatado e outros campos
       var newItem = {
         item_id: formattedItemId,
@@ -39,8 +53,9 @@ function() {
         variant_name: item.variant_name, 
         item_brand: item.item_brand,     
         item_url: item.item_url,        
-        price: item.price,
-        quantity: item.quantity
+        price: priceAsNumber, // Garante que seja um número
+        quantity: quantityAsNumber, // Garante que seja um número
+        google_business_vertical: 'retail'
       };
 
       // Adicionar o novo item à matriz formatada
