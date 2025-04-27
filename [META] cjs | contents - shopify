@@ -1,5 +1,5 @@
 function(){
-  return {{cjs | matriz itens formatada padrão Shopify | view_item}}.map(function(product){ // Substitua pela variável que abre a matriz items
+  return {{dlv | ecommerce.items}}.map(function(product){ // Substitua pela variável que abre a matriz items
     return {
       id: product.item_id, // Verifique o formato do parâmetro id
       quantity: product.quantity, // Verifique o formato do parâmetro quantity
