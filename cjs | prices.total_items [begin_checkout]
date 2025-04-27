@@ -1,0 +1,15 @@
+function() {
+    // Captura a variável da camada de dados
+    var totalItemsString = {{dlv | prices.total_items}}; // Substitua pelo nome exato da sua variável
+
+    // Converte para número inteiro
+    var totalItemsNumber = parseInt(totalItemsString, 10); // Use parseFloat() se for decimal [[5]]
+
+    // Validação: verifica se a conversão foi bem-sucedida
+    if (isNaN(totalItemsNumber)) {
+        console.error("Valor inválido para prices.total_items:", totalItemsString);
+        totalItemsNumber = 0; // Define um valor padrão (ex.: 0) se for inválido
+    }
+
+    return totalItemsNumber; // Retorna o valor convertido como número
+}
