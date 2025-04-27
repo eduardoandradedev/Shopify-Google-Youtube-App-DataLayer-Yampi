@@ -1,0 +1,43 @@
+function() {
+  // Captura os itens originais do evento
+  var originalItems = {{dlv | eventModel.items}} || [];
+  // Captura os shopify_product_id do pedido
+  var shopifyProductIds = {{dlv | order.optionsIds}} || [];
+  
+  // Formata os itens com o novo item_id
+  var formattedItems = originalItems.map(function(item, index) {
+    // Combina shopify_product_id e shopify_variant_id
+    var newItemId = shopifyProductIds[index];
+    
+    // Converte price para número decimal
+    var priceAsNumber = parseFloat(item.price); // Converte para número decimal [[6]]
+    if (isNaN(priceAsNumber)) {
+      console.error("Valor inválido para price:", item.price);
+      priceAsNumber = 0; // Define um valor padrão (ex.: 0) se for inválido
+    }
+
+    // Converte quantity para número inteiro
+    var quantityAsNumber = parseInt(item.quantity, 10); // Converte para número inteiro [[5]]
+    if (isNaN(quantityAsNumber)) {
+      console.error("Valor inválido para quantity:", item.quantity);
+      quantityAsNumber = 0; // Define um valor padrão (ex.: 0) se for inválido
+    }
+
+    // Retorna o item com o novo item_id e mantém os outros campos
+    return {
+      item_id: newItemId,
+      item_name: item.item_name,
+      item_brand: item.item_brand,
+      price: priceAsNumber, // Garante que seja um número
+      quantity: quantityAsNumber, // Garante que seja um número
+      item_category: item.item_category,
+      item_category2: item.item_category2,
+      item_category3: item.item_category3,
+      item_category4: item.item_category4,
+      item_category5: item.item_category5,
+      google_business_vertical: 'retail'
+    };
+  });
+
+  return formattedItems;
+}
