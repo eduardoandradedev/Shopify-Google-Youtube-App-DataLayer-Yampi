@@ -1,0 +1,40 @@
+/***** PERMISSÕES NECESSÁRIAS *****
+ * Reads Event Data → items
+ **********************************/
+
+const getEventData = require('getEventData');
+const logToConsole = require('logToConsole');   // opcional p/ Preview
+
+/* 1. Lê o array de itens do evento */
+var items = getEventData('items') || [];
+var contents = [];
+
+/* 2. Processa cada item */
+for (var i = 0; i < items.length; i++) {
+  var it = items[i];
+  if (!it || typeof it !== 'object') { continue; }
+
+  /* --- Extrai o ID (segundo bloco do item_id) --- */
+  var idFull  = '' + it.item_id;           // coerciona p/ string sem usar String()
+  var parts   = idFull.split('_');
+  var prodId  = (parts.length >= 3 && parts[2]) ? parts[2] : idFull;
+
+  /* --- Converte quantidade e preço --- */
+  var qty   = (it.quantity != null) ? (it.quantity * 1) : 1;   // *1 → número
+  if (!(qty > 0)) { qty = 1; }                                 // fallback
+
+  var price = (it.price != null)    ? (it.price * 1)    : 0;
+  if (!(price >= 0)) { price = 0; }                           // fallback
+
+  contents.push({
+    id: prodId,
+    quantity: qty,
+    item_price: price
+  });
+}
+
+/* 3. Debug no Preview (opcional) */
+logToConsole('FB contents', contents);
+
+/* 4. Retorna o array pronto */
+return contents;
