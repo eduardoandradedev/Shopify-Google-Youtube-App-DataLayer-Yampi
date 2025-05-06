@@ -1,0 +1,43 @@
+// Importando APIs básicas
+const makeString = require('makeString');
+const createRegex = require('createRegex');
+const sha256Sync = require('sha256Sync');
+const logToConsole = require('logToConsole');
+
+// Obter o valor da variável de entrada (CEP)
+let cep = makeString(data.inputVariable || '');
+
+// Log para depuração
+logToConsole('CEP original:', cep);
+
+// 1. Limpar o CEP mantendo apenas números
+const nonDigitRegex = createRegex('[^0-9]', 'g');
+cep = cep.replace(nonDigitRegex, '');
+
+// 2. Extrair apenas os 5 primeiros dígitos
+if (cep.length >= 5) {
+  cep = cep.substring(0, 5);
+} else {
+  // Se tiver menos de 5 dígitos, preencher com zeros à direita
+  while (cep.length < 5) {
+    cep += '0';
+  }
+}
+
+// Log para depuração
+logToConsole('CEP formatado (5 dígitos):', cep);
+
+// 3. Aplicar hash SHA-256 no formato hexadecimal (padrão do Facebook)
+if (cep && cep.length > 0) {
+  const hashOptions = {
+    outputEncoding: 'hex'
+  };
+  
+  cep = sha256Sync(cep, hashOptions);
+  
+  // Log para depuração
+  logToConsole('CEP com hash:', cep);
+}
+
+// Retornar o CEP formatado e com hash
+return cep;
