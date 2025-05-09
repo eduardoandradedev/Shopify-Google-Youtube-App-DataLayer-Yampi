@@ -1,8 +1,16 @@
 function() {
-  return {{dlv | ecommerce.items}}.map(function(product) { // Substitua pela variável que abre a matriz items
+  return {{dlv | ecommerce.items}}.map(function(product) {
+    // Converter quantidade e preço para números
+    const quantity = parseInt(product.quantity, 10) || 0; // Fallback para 0 se inválido
+    const price = parseFloat(product.price) || 0; // Fallback para 0 se inválido
+
+    // Calcular item_price como preço * quantidade
+    const itemPrice = price * quantity;
+
     return {
-      id: product.item_id, // Verifique o formato do parâmetro id
-      quantity: parseInt(product.quantity, 10), // Converte quantity para número inteiro
+      id: product.item_id,
+      quantity: quantity,
+      item_price: itemPrice // Valor total por item (preço * quantidade)
     };
   });
 }
