@@ -1,16 +1,14 @@
 function() {
   return {{dlv | ecommerce.items}}.map(function(product) {
-    // Converter quantidade e preço para números
-    const quantity = parseInt(product.quantity, 10) || 0; // Fallback para 0 se inválido
-    const price = parseFloat(product.price) || 0; // Fallback para 0 se inválido
-
-    // Calcular item_price como preço * quantidade
-    const itemPrice = price * quantity;
+    // Substituir 'const' por 'var' ou 'let'
+    var quantity = parseInt(product.quantity, 10) || 0; 
+    var price = parseFloat(product.price) || 0; 
+    var itemPrice = price * quantity;
 
     return {
       id: product.item_id,
       quantity: quantity,
-      item_price: itemPrice // Valor total por item (preço * quantidade)
+      item_price: itemPrice
     };
   });
 }
