@@ -1,6 +1,5 @@
 function() {
   return {{dlv | ecommerce.items}}.map(function(product) {
-    // Substituir 'const' por 'var' ou 'let'
     var quantity = parseInt(product.quantity, 10) || 0; 
     var price = parseFloat(product.price) || 0; 
     var itemPrice = price * quantity;
