@@ -4,8 +4,11 @@ function() {
     var price = parseFloat(product.price) || 0; 
     var itemPrice = price * quantity;
 
+    var idParts = product.item_id.split("_");
+    var id = idParts.length >= 3 ? idParts[2] : "";
+
     return {
-      id: product.item_id,
+      id: id,
       quantity: quantity,
       item_price: itemPrice
     };
