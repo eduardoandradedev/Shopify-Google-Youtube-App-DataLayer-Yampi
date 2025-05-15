@@ -1,58 +1,51 @@
-// Importando APIs básicas
 const makeString = require('makeString');
 const createRegex = require('createRegex');
 const sha256Sync = require('sha256Sync');
 const logToConsole = require('logToConsole');
 
-// Obter o valor da variável de entrada
+// Entrada
 let inputText = makeString(data.inputVariable || '');
+let fieldType = data.fieldType || 'generic'; // ex: 'em', 'ph', 'fn', 'ln', etc.
 
-// Log para depuração
 logToConsole('Valor original:', inputText);
 
-// 1. Normalizar o texto (processo de normalização do Facebook)
-// 1.1. Remover acentos (substituindo o método normalize que não está disponível)
-// Mapa de caracteres acentuados para não acentuados
-const accentMap = {
-  'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a',
-  'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
-  'í': 'i', 'ì': 'i', 'î': 'i', 'ï': 'i',
-  'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o',
-  'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u',
-  'ç': 'c', 'ñ': 'n'
-};
+// Etapas base
+inputText = inputText.trim().toLowerCase();
 
-// Função para remover acentos
-for (let char in accentMap) {
-  const regex = createRegex(char, 'g');
-  inputText = inputText.replace(regex, accentMap[char]);
+if (fieldType === 'em') {
+  // Manter apenas letras, números, @ _ . - +
+  const emailSafeRegex = createRegex('[^a-z0-9@_.\\-+]', 'g'); // "-" escapado
+  inputText = inputText.replace(emailSafeRegex, '');
+} else {
+  // Remover acentos
+  const accentMap = {
+    'á': 'a', 'à': 'a', 'â': 'a', 'ã': 'a', 'ä': 'a',
+    'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
+    'í': 'i', 'ì': 'i', 'î': 'i', 'ï': 'i',
+    'ó': 'o', 'ò': 'o', 'ô': 'o', 'õ': 'o', 'ö': 'o',
+    'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u',
+    'ç': 'c', 'ñ': 'n'
+  };
+  for (let char in accentMap) {
+    const regex = createRegex(char, 'g');
+    inputText = inputText.replace(regex, accentMap[char]);
+  }
+
+  // Remover espaços
+  const spaceRegex = createRegex('\\s+', 'g');
+  inputText = inputText.replace(spaceRegex, '');
+
+  // Manter apenas letras e números
+  const cleanRegex = createRegex('[^a-z0-9]', 'g');
+  inputText = inputText.replace(cleanRegex, '');
 }
 
-// 1.2. Converter para minúsculas
-inputText = inputText.toLowerCase();
-
-// 1.3. Remover espaços
-const spaceRegex = createRegex('\\s+', 'g');
-inputText = inputText.replace(spaceRegex, '');
-
-// 1.4. Remover caracteres especiais (manter apenas letras e números)
-const specialCharsRegex = createRegex('[^a-z0-9]', 'g');
-inputText = inputText.replace(specialCharsRegex, '');
-
-// Log para depuração
 logToConsole('Valor normalizado:', inputText);
 
-// 2. Aplicar hash SHA-256 no formato hexadecimal (padrão do Facebook)
+// Hash SHA-256
 if (inputText && inputText.length > 0) {
-  const hashOptions = {
-    outputEncoding: 'hex'
-  };
-  
-  inputText = sha256Sync(inputText, hashOptions);
-  
-  // Log para depuração
+  inputText = sha256Sync(inputText, { outputEncoding: 'hex' });
   logToConsole('Valor com hash:', inputText);
 }
 
-// Retornar o texto normalizado e com hash
 return inputText;
